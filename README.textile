@@ -34,6 +34,7 @@ addDataSet: 0,0.5,9.5,20.5,23.5,41.5,41.5,43.5,43.5,46.5
 представлены в тесте test/utittests/gChartPhpDSLParser.php.
 
 h2. установка и настройка MediawikiPlugin
+
 Чтобы подключить плагин к mediawiki нужно выполнить 4 шага:
 1. придумать где будет размещен плагин, например в  /root
 2. получить файлы с гитхаба git://github.com/vglebov/gChartPhpSL.git
