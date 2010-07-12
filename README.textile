@@ -14,18 +14,20 @@ Burn Down Chart для проекта ESDP (http://groups.google.com/group/esdp-
 отображать нужные нам графики:
 
 bc. <gChartPhp>
-newLineChart: 300,300
+newLineChart: 330,300
 setTitle: Общие часы
+addDataSet: 0, 11, 22, 33, 44, 55, 66, 77, 88, 100, 80, 80, 80
+addDataSet: 0,0.5,9.5,20.5,23.5,41.5,41.5,43.5,43.5,46.5,46.5,  46.5,46.5
 setLegend: план, факт
-setColors: ff3344, 11ff11
+setColors: 11ff11, ff3344
 setVisibleAxes: x, y
-setGridLines: 11,10
 setDataRange: 0, 100
-addAxisRange: 0, 0, 9, 1
+addAxisRange: 0, 0, 12, 1
 addAxisRange: 1, 0, 100
-addDataSet: 0, 11, 22, 33, 44, 55, 66, 77, 88, 100
-addDataSet: 0,0.5,9.5,20.5,23.5,41.5,41.5,43.5,43.5,46.5
+setGridLines: 8.3,10
 </gChartPhp>
+
+!http://chart.apis.google.com/chart?cht=lc&chs=330x300&chtt=%D0%9E%D0%B1%D1%89%D0%B8%D0%B5+%D1%87%D0%B0%D1%81%D1%8B&chdl=%D0%BF%D0%BB%D0%B0%D0%BD%7C%D1%84%D0%B0%D0%BA%D1%82&chco=11ff11,ff3344&chxt=x,y&chds=0,100&chxr=0,0,12,1|1,0,100&chg=8.3,10,4,1,0,0&chd=t:0,11,22,33,44,55,66,77,88,100,80,80,80|0,0.5,9.5,20.5,23.5,41.5,41.5,43.5,43.5,46.5,46.5,46.5,46.5!
 
 Код напрямую соответсвует вызовам gChartPhp и для управления этим DSL нужно
 ознакомится с API  от гугла.
