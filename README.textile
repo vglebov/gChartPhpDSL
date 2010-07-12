@@ -1,0 +1,44 @@
+h2. DSL для библиотеки gChartPhpParser
+
+Этот маленький проект появился в результате решения задачи по отображению в вики
+графиков, а именно "диаграмма текущего состояния", что то вроде вывернутого
+Burn Down Chart для проекта ESDP (http://groups.google.com/group/esdp-project).
+В результате поиска был обнаружен http://www.mediawiki.org/wiki/Extension:Google_Chart
+Очень прост, однако он меня не устроил по удобству использования, все в "одну строку",
+слишком много для одной строки.
+
+Решил использовать что-то более высокоуровневое, нашел библиотеку gChartPhp,
+которая обладает необходимым функционалом для построения графиков, взял из одного
+из проектов SimpleDSLParser очень простой и удобный однострочный парсер.
+На базе него построил gChartPhpDSLParser, который на начальном этапе позволяет
+отображать нужные нам графики:
+
+<gChartPhp>
+newLineChart: 300,300
+setTitle: Общие часы
+setLegend: план, факт
+setColors: ff3344, 11ff11
+setVisibleAxes: x, y
+setGridLines: 11,10
+setDataRange: 0, 100
+addAxisRange: 0, 0, 9, 1
+addAxisRange: 1, 0, 100
+addDataSet: 0, 11, 22, 33, 44, 55, 66, 77, 88, 100
+addDataSet: 0,0.5,9.5,20.5,23.5,41.5,41.5,43.5,43.5,46.5
+</gChartPhp>
+
+Код напрямую соответсвует вызовам gChartPhp и для управления этим DSL нужно
+ознакомится с API  от гугла.
+
+Некоторые другие варианты использования составлены на основании демо gChartPhp и
+представлены в тесте test/utittests/gChartPhpDSLParser.php.
+
+h2 установка и настройка MediawikiPlugin
+Чтобы подключить плагин к mediawiki нужно выполнить 4 шага:
+1. придумать где будет размещен плагин, например в  /root
+2. получить файлы с гитхаба git://github.com/vglebov/gChartPhpSL.git
+3. сделать символическую ссылку в директорию расширений mediawiki,
+на моем компе это /var/lib/mediawiki/extensions/
+sudo ln -s /root/gChartPhpSL /var/lib/mediawiki/extensions/
+4. Изменить файл /var/lib/mediawiki/LocalSettings.php, добавить строку:
+require_once("$IP/extensions/gChartPhpDSL/MediawikiPlugin.php");
