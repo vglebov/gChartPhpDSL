@@ -37,7 +37,7 @@ h2. установка и настройка MediawikiPlugin
 
 Чтобы подключить плагин к mediawiki нужно выполнить 4 шага:
 1. придумать где будет размещен плагин, например в  /root
-2. получить файлы с гитхаба git://github.com/vglebov/gChartPhpSL.git
+2. получить файлы с гитхаба git clone git://github.com/vglebov/gChartPhpDSL.git
 3. сделать символическую ссылку в директорию расширений mediawiki,
 на моем компе это /var/lib/mediawiki/extensions/
 sudo ln -s /root/gChartPhpSL /var/lib/mediawiki/extensions/
