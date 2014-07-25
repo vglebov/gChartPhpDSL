@@ -45,5 +45,3 @@ h2. установка и настройка MediawikiPlugin
 sudo ln -s /root/gChartPhpSL /var/lib/mediawiki/extensions/
 4. Изменить файл /var/lib/mediawiki/LocalSettings.php, добавить строку:
 require_once("$IP/extensions/gChartPhpDSL/MediawikiPlugin.php");
-
-тест
